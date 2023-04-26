@@ -1,3 +1,5 @@
+https://github.com/anign/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg
+
 # YaMDb project
 This is a final project of API module, part of python-developer course
 by yandex-practicum
