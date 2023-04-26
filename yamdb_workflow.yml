@@ -15,6 +15,7 @@ jobs:
 
     - name: Install dependencies
       run: | 
+        cd api_yamdb/
         python -m pip install --upgrade pip 
         pip install flake8 pep8-naming flake8-broken-line flake8-return flake8-isort
         pip install -r requirements.txt 
@@ -23,7 +24,7 @@ jobs:
       run: |
         pytest
         python -m flake8
-        cd infra_project/
+        cd api_yamdb/
         python manage.py test
 
   build_and_push_to_docker_hub:
