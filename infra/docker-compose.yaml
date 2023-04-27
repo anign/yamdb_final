@@ -13,8 +13,7 @@ services:
       - ./.env
   web:
     build:
-      image: avignat/api_yamdb:latest
-      dockerfile: ./Dockerfile
+      image: avignat/yamdb:latest
     restart: always
     volumes:
       - static_value:/app/static/
