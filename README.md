@@ -1,6 +1,8 @@
 ## ![](https://github.com/anign/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
-[Link to YamDB](http://158.160.30.65/redoc/)
+### [YamDB ReDOC](http://158.160.30.65/redoc/)
+### [YamDB API](http://158.160.30.65/api/v1/)
+### [YamDB admin panel](http://158.160.30.65/admin/)
 
 # Запуск docker-compose
 ```
