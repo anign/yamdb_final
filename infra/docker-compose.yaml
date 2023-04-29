@@ -12,8 +12,7 @@ services:
     env_file:
       - ./.env
   web:
-    build:
-      image: avignat/yamdb:latest
+    image: avignat/yamdb:latest
     restart: always
     volumes:
       - static_value:/app/static/
