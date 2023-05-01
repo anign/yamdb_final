@@ -6,7 +6,7 @@
 
 # Запуск docker-compose
 ```
-Это проектное задание модуля Docker, часть курса "Python-developer"
+Это проектное задание модуля CI и CD, часть курса "Python-developer"
 от Яндекс-практикум
 ```
 ## Автор
@@ -45,8 +45,6 @@ DB_PORT= порт для подключения к БД
 ```
 Клонируем репозиторий и переходим в него:
 ```bash
-git clone git@github.com:CreedOfFear/api_yamdb.git
-cd infra_sp2
 cd api_yamdb
 ```
 Создаем и активируем виртуальное окружение:
