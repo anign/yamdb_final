@@ -1,9 +1,10 @@
-from django.conf import settings
 from django.contrib.auth.validators import UnicodeUsernameValidator
 from rest_framework import serializers
 from rest_framework.relations import SlugRelatedField
 from rest_framework.serializers import Serializer
-from reviews.models import Category, Comment, Genre, Review, Title
+
+from django.conf import settings
+from reviews.models import Category, Title, Genre, Review, Comment
 from users.models import User
 
 
@@ -69,17 +70,18 @@ class ReviewSerializer(serializers.ModelSerializer):
     def validate(self, data):
         if self.context['request'].method != 'POST':
             return data
-        author = self.context['request'].user
-        title_id = (
-            self.context['request'].parser_context['kwargs']['title_id']
-        )
-        if Review.objects.filter(
-                author=author,
-                title__id=title_id
-        ).exists():
-            raise serializers.ValidationError(
-                'Не более одного отзыва на произведение!')
-        return data
+        else:
+            author = self.context['request'].user
+            title_id = (
+                self.context['request'].parser_context['kwargs']['title_id']
+            )
+            if Review.objects.filter(
+                    author=author,
+                    title__id=title_id
+            ).exists():
+                raise serializers.ValidationError(
+                    'Не более одного отзыва на произведение!')
+            return data
 
 
 class CommentSerializer(serializers.ModelSerializer):
